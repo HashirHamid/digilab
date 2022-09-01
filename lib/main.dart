@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-
-import 'diagnosis_screen.dart';
-import 'home_screen.dart';
+import 'package:flutter_complete_guide/screens/diagnosis_screen.dart';
+import 'package:flutter_complete_guide/screens/profile_screen.dart';
+import 'package:flutter_complete_guide/screens/settings_screen.dart';
+import 'package:flutter_complete_guide/screens/tabs_screen.dart';
+import 'screens/home_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,9 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DeliMeals',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.teal,
         accentColor: Colors.amber,
-        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        canvasColor: Color.fromARGB(255, 247, 247, 247),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
               bodyText1: TextStyle(
@@ -22,6 +24,8 @@ class MyApp extends StatelessWidget {
               bodyText2: TextStyle(
                 color: Color.fromRGBO(20, 51, 51, 1),
               ),
+              headline4: TextStyle(
+                  fontFamily: 'Raleway', fontSize: 30, color: Colors.white),
               headline6: TextStyle(
                 fontFamily: 'Raleway',
               ),
@@ -35,7 +39,11 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (ctx) => HomeScreen(),
+        '/': (ctx) => TabsScreen(),
+        HomeScreen.routeName: (ctx) => HomeScreen(),
+        DiagnosisScreen.routeName: (ctx) => DiagnosisScreen(),
+        SettingsScreen.routeName: (ctx) => SettingsScreen(),
+        ProfileScreen.routeName: (ctx) => ProfileScreen(),
       },
     );
   }
