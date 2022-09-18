@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/screens/diagnosis_screen.dart';
 import 'package:flutter_complete_guide/screens/profile_screen.dart';
 
 class MainDrawer extends StatelessWidget {
